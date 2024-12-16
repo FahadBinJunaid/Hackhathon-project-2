@@ -30,7 +30,7 @@ const Features = () => {
             <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
           <h3 className="text-[20px] mb-2">Unbeatable prices</h3>
-          <p className="text-[16px] text-neutral-600">For our materials and quality you won't find better prices anywhere</p>
+          <p className="text-[16px] text-neutral-600">For our materials and quality you wont find better prices anywhere</p>
         </div>
 
         {/* Recycled packaging */}
