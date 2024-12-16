@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import EmailSignUp from "../components/EmailSignUp";
-import Features from "../components/features";
+import EmailSignUp from '../components/EmailSignUp';
+import Features from '../components/features';
 
 export default function AboutUs() {
   return (
@@ -15,7 +15,8 @@ export default function AboutUs() {
       <div className="w-[1440px] h-[277px] mx-auto mt-8 mb-20 bg-[#FFFFFF]">
         <div className="px-32 py-[88px] flex justify-between items-center">
           <h1 className="text-[32px] sm:text-[48px] leading-[120%] max-w-[736px]">
-            A brand built on the love of craftmanship,{""}quality and outstanding customer service
+            A brand built on the love of craftmanship,{" "}
+            quality and outstanding customer service
           </h1>
           <button className="text-neutral-600 hover:text-black">
             View our products
@@ -31,7 +32,7 @@ export default function AboutUs() {
             It started with a small idea
           </h2>
           <p className="text-base leading-[150%] mb-12">
-            A global brand with local beginnings, our story begain in a small studio in South London in early 2014
+            A global brand with local beginnings, our story began in a small studio in South London in early 2014
           </p>
           <button className="bg-[rgba(249,249,249,0.15)] hover:bg-[rgba(249,249,249,0.25)] transition-colors text-white px-8 py-4">
             View collection
@@ -62,7 +63,7 @@ export default function AboutUs() {
         {/* Right Content */}
         <div className="bg-white px-16 py-24 flex flex-col justify-center">
           <h2 className="text-[32px] font-clash-display leading-[120%] mb-8">
-            Our service isn't just personal, it's actually hyper personally exquisite
+            Our service is not just personal, its actually hyper personally exquisite
           </h2>
           <p className="text-base text-neutral-600 mb-6">
             When we started Avion, the idea was simple. Make high quality furniture affordable and available for the mass market.
@@ -76,16 +77,14 @@ export default function AboutUs() {
         </div>
       </div>
       <div className="w-[1440px] mx-auto mt-20">
-      <Features />
+        <Features />
       </div>
       <div className="w-[1440px] mx-auto mt-20">
-      <EmailSignUp />
+        <EmailSignUp />
       </div>
       <div className="w-[1440px] mx-auto mt-20">
-      <Footer />
+        <Footer />
       </div>
-    </div>
-  )
+    </div>
+  );
 }
-
-

@@ -12,7 +12,7 @@ export default function contact() {
             <div className="grid sm:grid-cols-2 items-start gap-14 p-8 mx-auto max-w-4xl bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md font-[sans-serif]">
                 <div>
                     <h1 className="text-[#2A254B] text-3xl font-extrabold">Contact Us</h1>
-                    <p className="text-sm text-gray-500 mt-4">Have some big idea or brand to develop and need help? Then reach out we'd love to hear about your project  and provide help.</p>
+                    <p className="text-sm text-gray-500 mt-4">Have some big idea or brand to develop and need help? Then reach out we would love to hear about your project  and provide help.</p>
 
                     <div className="mt-12">
                         <h2 className="text-gray-800 text-base font-bold">Email</h2>
@@ -87,7 +87,6 @@ export default function contact() {
             </div>
         </div>
         <Footer />
-    </div>
-  )
+    </div>
+  )
 }
-
