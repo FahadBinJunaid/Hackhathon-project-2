@@ -4,6 +4,9 @@ import EmailSignUp from './components/EmailSignUp';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Image from 'next/image'
+import Link from 'next/link';
+
 interface Product {
   id: number;
   name: string;
@@ -43,14 +46,14 @@ function Home() {
     <div className='bg-[#F9F9F9]'>
       <Header />
       <Navbar />
-      {/* Hero Section */}
       
-      <div className="bg-[#2A254B] w-[1440px] h-[584px] mx-auto text-white ">
-        <div className="max-w-[1280px] h-[584px] top-[60px] left-[80px] gap-[0px] opacity-[0px] mx-auto grid grid-cols-1 lg:grid-cols-2 ">
+      {/* Hero Section - Made responsive */}
+      <div className="bg-[#2A254B] w-full text-white">
+        <div className="container mx-auto h-full grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8">
           {/* Left Content */}
-          <div className="px-16 py-24 flex flex-col justify-center">
+          <div className="px-4 sm:px-8 lg:px-16 py-12 sm:py-16 lg:py-24 flex flex-col justify-center">
             <h1 className="font-clash-display text-[32px] sm:text-[48px] leading-[120%] mb-4">
-            The furniture brand for the
+              The furniture brand for the
             </h1>
             <h1 className="font-clash-display text-[32px] sm:text-[48px] leading-[120%] mb-8">
               future, with timeless designs
@@ -58,32 +61,37 @@ function Home() {
             <button className="bg-[rgba(249,249,249,0.15)] hover:bg-[rgba(249,249,249,0.25)] transition-colors text-white px-8 py-4 w-fit mt-8">
               View collection
             </button>
-            <p className="text-base leading-[150%] mt-32 max-w-[536px]">
+            <p className="text-base leading-[150%] mt-8 lg:mt-32 max-w-[536px]">
               A new era in eco friendly furniture with Avelon, the French luxury retail brand with nice fonts, tasteful colors and a beautiful way to display things digitally using modern web technologies.
             </p>
           </div>
           
           {/* Right Image */}
-          <div className="">
-            <img
+          <div className="flex justify-center lg:justify-end items-center p-4 sm:p-8">
+            <Image
               src="Parent.png"
               alt="Modern chair"
-              className="w-[520px] h-[584px] left-[720px] gap-[0px] opacity-[0px] top-[0px] object-cove mx-52"
+              className="w-full max-w-[520px] h-auto object-cover"
+              width={520}
+              height={584}
+              priority
             />
           </div>
         </div>
       </div>
-      
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Products Grid */}
+
+      {/* Main Content Container */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Products Grid - Already responsive, just needs container adjustments */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 py-8 md:py-12">
           {products.map((product) => (
             <div key={product.id} className="group cursor-pointer">
-              <div className="aspect-square mb-4 bg-neutral-100 relative overflow-hidden w-full sm:w-[305px] sm:h-[375px]">
-                <img
+              <div className="aspect-square mb-4 bg-neutral-100 relative overflow-hidden w-full">
+                <Image
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <h3 className="text-base sm:text-lg lg:text-[20px] mb-2">{product.name}</h3>
@@ -92,75 +100,54 @@ function Home() {
           ))}
         </div>
 
-        {/* View Collection Button */}
-        <div className="flex justify-center py-6 sm:py-8">
-          <button className="text-sm sm:text-base text-neutral-600 hover:text-black border border-neutral-600 px-4 sm:px-6 py-2 rounded hover:bg-neutral-100 transition-colors">
-            View collection
-          </button>
-        </div>
-
         {/* Popular Products Section */}
-        <div className="max-w-[1280px] mx-auto mt-16 mb-16 px-16">
+        <div className="w-full mt-16 mb-16 px-4 sm:px-8">
           <h2 className="text-[24px] sm:text-[32px] font-clash-display mb-12">
             Our popular products
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-24 mx-36">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Product 1 */}
-            <div className="group cursor-pointer w-[630px] h-[375px] -ml-52">
-              <div className="relative overflow-hidden mb-6">
-                <img
+            <div className="col-span-1 lg:col-span-2 group cursor-pointer">
+              <div className="relative overflow-hidden mb-6 aspect-[5/3]">
+                <Image
                   src="Lsofa.png"
                   alt="The Poplar suede sofa"
-                  className="w-[630px] h-[375px] relative "
+                  fill
+                  className="object-cover"
                 />
               </div>
               <h3 className="text-[20px] mb-3">The Poplar suede sofa</h3>
               <p className="text-[18px] text-neutral-600">£980</p>
             </div>
 
-            {/* Product 2 */}
-            <div className="group cursor-pointer w-[305px] h-[375px] mx-32">
-              <div className="relative overflow-hidden mb-6">
-                <img
-                  src="Parent.png"
-                  alt="The Dandy chair"
-                  className="w-[305px] h-[375px] object-cover"
-                />
-              </div>
-              <h3 className="text-[20px] mb-3">The Dandy chair</h3>
-              <p className="text-[18px] text-neutral-600">£250</p>
-            </div>
-
-            {/* Product 3 */}
-            <div className="group cursor-pointer w-[305px] h-[375px] mx-36">
-              <div className="relative overflow-hidden mb-6">
-                <img
-                  src="Photo.png"
-                  alt="The Dandy chair"
-                  className="w-[305px] h-[375px] object-cover"
-                />
-              </div>
-              <h3 className="text-[20px] mb-3">The Dandy chair</h3>
-              <p className="text-[18px] text-neutral-600">£250</p>
+            {/* Products 2 & 3 */}
+            <div className="space-y-8">
+              {[
+                { src: "Parent.png", name: "The Dandy chair", price: "250" },
+                { src: "Photo.png", name: "The Dandy chair", price: "250" }
+              ].map((item, index) => (
+                <div key={index} className="group cursor-pointer">
+                  <div className="relative overflow-hidden mb-6 aspect-square">
+                    <Image
+                      src={item.src}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <h3 className="text-[20px] mb-3">{item.name}</h3>
+                  <p className="text-[18px] text-neutral-600">£{item.price}</p>
+                </div>
+              ))}
             </div>
           </div>
-
-          {/* View Collection Button */}
-          <div className="flex justify-center mt-28">
-            <button className="text-neutral-600 hover:text-black border border-neutral-600 px-8 py-4 rounded">
-              View collection
-            </button>
-          </div>
-        </div>
-        <div className="mb-28 mx-auto">
-          <EmailSignUp />
         </div>
 
         {/* Studio in London Section */}
-        <div className=" w-[1440px] h-[603px] mx-auto grid grid-cols-2 bg-[#FFFFFF]">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white">
           {/* Left Content */}
-          <div className="px-16 py-24 flex flex-col justify-center w-[720px] h-[603px] mb-20 -ml-14">
+          <div className="px-4 sm:px-8 lg:px-16 py-12 sm:py-16 lg:py-24 flex flex-col justify-center">
             <h2 className="text-[32px] font-clash-display leading-[120%] mb-8">
               From a studio in London to a global brand with over 400 outlets
             </h2>
@@ -176,16 +163,21 @@ function Home() {
           </div>
 
           {/* Right Image */}
-          <div className="relative -ml-8">
-            <img
+          <div className="relative aspect-[6/5]">
+            <Image
               src="Image.png"
               alt="Studio showcase"
-              className="w-[720px] h-[603px] object-cover"
+              fill
+              className="object-cover"
             />
           </div>
         </div>
-        
-      </div> 
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-28">
+        <EmailSignUp />
+      </div>
+      
       <Footer />
     </div>
   );

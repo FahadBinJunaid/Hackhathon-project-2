@@ -94,54 +94,58 @@ const ProductsPage = () => {
       <Header />
       <Navbar />
       
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full">
         {/* Banner Image */}
-        <div className="w-full -mx-4 sm:-mx-6 lg:-mx-8">
-          <img 
+        <div className="relative w-full aspect-[16/3] sm:aspect-[16/4] md:aspect-[16/5]">
+          <Image 
             src="Frame2.png" 
             alt="allProducts" 
-            className="w-full h-[120px] sm:h-[150px] md:h-[180px] lg:h-[209px] object-cover"
+            fill
+            className="object-cover"
           />
         </div>
 
         {/* Filter Bar */}
-        <div className="py-4 sm:py-6 md:h-[132px] flex flex-col sm:flex-row items-start sm:items-center justify-between">
-          {/* Left side filters */}
-          <div className="flex flex-wrap gap-4 sm:gap-6 mb-4 sm:mb-0">
-            <button className="text-sm sm:text-base text-neutral-600 hover:text-black">Category</button>
-            <button className="text-sm sm:text-base text-neutral-600 hover:text-black">Product type</button>
-            <button className="text-sm sm:text-base text-neutral-600 hover:text-black">Price</button>
-            <button className="text-sm sm:text-base text-neutral-600 hover:text-black">Brand</button>
-          </div>
-          {/* Right side filters */}
-          <div className="flex gap-4 sm:gap-6">
-            <button className="text-sm sm:text-base text-neutral-600 hover:text-black">Sort by</button>
-            <button className="text-sm sm:text-base text-neutral-600 hover:text-black">Filter</button>
-          </div>
-        </div>
-
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 py-8 md:py-12">
-          {products.map((product) => (
-            <div key={product.id} className="group cursor-pointer">
-              <div className="aspect-square mb-4 bg-neutral-100 relative overflow-hidden w-full sm:w-[305px] sm:h-[375px]">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <h3 className="text-base sm:text-lg lg:text-[20px] mb-2">{product.name}</h3>
-              <p className="text-sm sm:text-base lg:text-[18px] text-neutral-600">£{product.price}</p>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="py-4 sm:py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            {/* Left side filters */}
+            <div className="flex flex-wrap gap-4 sm:gap-6">
+              <button className="text-sm sm:text-base text-neutral-600 hover:text-black">Category</button>
+              <button className="text-sm sm:text-base text-neutral-600 hover:text-black">Product type</button>
+              <button className="text-sm sm:text-base text-neutral-600 hover:text-black">Price</button>
+              <button className="text-sm sm:text-base text-neutral-600 hover:text-black">Brand</button>
             </div>
-          ))}
-        </div>
+            {/* Right side filters */}
+            <div className="flex gap-4 sm:gap-6">
+              <button className="text-sm sm:text-base text-neutral-600 hover:text-black">Sort by</button>
+              <button className="text-sm sm:text-base text-neutral-600 hover:text-black">Filter</button>
+            </div>
+          </div>
 
-        {/* View Collection Button */}
-        <div className="flex justify-center py-6 sm:py-8">
-          <button className="text-sm sm:text-base text-neutral-600 hover:text-black border border-neutral-600 px-4 sm:px-6 py-2 rounded hover:bg-neutral-100 transition-colors">
-            View collection
-          </button>
+          {/* Products Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 py-8 md:py-12">
+            {products.map((product) => (
+              <div key={product.id} className="group cursor-pointer">
+                <div className="aspect-square mb-4 bg-neutral-100 relative overflow-hidden w-full">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="text-base sm:text-lg lg:text-[20px] mb-2">{product.name}</h3>
+                <p className="text-sm sm:text-base lg:text-[18px] text-neutral-600">£{product.price}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* View Collection Button */}
+          <div className="flex justify-center py-6 sm:py-8">
+            <button className="text-sm sm:text-base text-neutral-600 hover:text-black border border-neutral-600 px-4 sm:px-6 py-2 rounded hover:bg-neutral-100 transition-colors">
+              View collection
+            </button>
+          </div>
         </div>
       </div>
 

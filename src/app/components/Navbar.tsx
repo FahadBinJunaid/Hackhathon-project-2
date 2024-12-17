@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <div>
       {/* Top bar with logo and search */}
-      <div className="bg-white border-b border-neutral-200 max-w-[1440px] mx-auto">
+      <div className="bg-white border-b border-neutral-200">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16 relative">
             {/* Search Icon */}
