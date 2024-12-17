@@ -4,87 +4,94 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2A254B] text-white py-8 sm:py-12 lg:py-16 w-full mx-auto">
+    <footer className="bg-[#2A254B] text-white py-8 sm:py-12 lg:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile-first grid layout */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-x-[100px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {/* Menu Section */}
-          <div className="w-full md:w-auto mx-auto">
-            <h3 className="text-[16px] font-normal mb-4">Menu</h3>
+          <div>
+            <h3 className="text-base font-medium mb-4">Menu</h3>
             <ul className="space-y-3">
-              <li><Link href="/new-arrivals" className="text-[14px] hover:opacity-80">New arrivals</Link></li>
-              <li><Link href="/best-sellers" className="text-[14px] hover:opacity-80">Best sellers</Link></li>
-              <li><Link href="/recently-viewed" className="text-[14px] hover:opacity-80">Recently viewed</Link></li>
-              <li><Link href="/popular-this-week" className="text-[14px] hover:opacity-80">Popular this week</Link></li>
-              <li><Link href="/allProducts" className="text-[14px] hover:opacity-80">All products</Link></li>
+              {menuLinks.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className="text-sm hover:opacity-80"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Categories Section */}
-          <div className="w-full md:-ml-4">
-            <h3 className="text-[16px] font-normal mb-4">Categories</h3>
+          <div>
+            <h3 className="text-base font-medium mb-4">Categories</h3>
             <ul className="space-y-3">
-              <li><Link href="/crockery" className="text-[14px] hover:opacity-80">Crockery</Link></li>
-              <li><Link href="/furniture" className="text-[14px] hover:opacity-80">Furniture</Link></li>
-              <li><Link href="/homeware" className="text-[14px] hover:opacity-80">Homeware</Link></li>
-              <li><Link href="/plant-pots" className="text-[14px] hover:opacity-80">Plant pots</Link></li>
-              <li><Link href="/chairs" className="text-[14px] hover:opacity-80">Chairs</Link></li>
-              <li><Link href="/crockery" className="text-[14px] hover:opacity-80">Crockery</Link></li>
+              {categories.map((category) => (
+                <li key={category}>
+                  <Link 
+                    href={`/${category.toLowerCase().replace(' ', '-')}`}
+                    className="text-sm hover:opacity-80"
+                  >
+                    {category}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Our Company Section */}
-          <div className="w-full md:-ml-32">
-            <h3 className="text-[16px] font-normal mb-4">Our company</h3>
+          <div>
+            <h3 className="text-base font-medium mb-4">Our Company</h3>
             <ul className="space-y-3">
-              <li><Link href="/AboutUs" className="text-[14px] hover:opacity-80">About us</Link></li>
-              <li><Link href="/vacancies" className="text-[14px] hover:opacity-80">Vacancies</Link></li>
-              <li><Link href="/contact-us" className="text-[14px] hover:opacity-80">Contact us</Link></li>
-              <li><Link href="/privacy" className="text-[14px] hover:opacity-80">Privacy</Link></li>
-              <li><Link href="/returns-policy" className="text-[14px] hover:opacity-80">Returns policy</Link></li>
+              {companyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className="text-sm hover:opacity-80"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Join our mailing list Section */}
-          <div className="col-span-2 md:col-span-1 w-full">
-            <h3 className="text-[16px] font-normal mb-4 md:-ml-72">Join our mailing list</h3>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-2">
+          {/* Newsletter Section */}
+          <div className="col-span-2 md:col-span-1">
+            <h3 className="text-base font-medium mb-4">Join our mailing list</h3>
+            <div className="flex flex-col gap-4">
               <input
                 type="email"
                 placeholder="your@email.com"
-                className="w-full md:w-[350px] h-[56px] bg-[#FFFFFF26] border border-white px-4 py-2 text-[14px] md:-ml-72"
+                className="w-full px-4 py-3 bg-[#FFFFFF26] border border-white text-sm"
               />
-              <button className="w-full sm:w-auto h-[56px] bg-white text-[#2A254B] px-6 py-2 text-[14px]">
+              <button className="w-full sm:w-auto bg-white text-[#2A254B] px-6 py-3 text-sm font-medium">
                 Sign up
               </button>
             </div>
           </div>
         </div>
 
-        <hr className="my-8 border-[#4E4D93] mx-4 md:mx-20"/>
+        {/* Divider */}
+        <hr className="my-8 border-[#4E4D93]"/>
         
         {/* Copyright and Social Links */}
-        <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-6 md:gap-0 mx-4 md:mx-20">
-          <p className="text-[14px]">Copyright 2022 Avion LTD</p>
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
+          <p className="text-sm">Copyright 2024 Avion LTD</p>
           <div className="flex flex-wrap justify-center gap-6">
-            <Link href="https://linkedin.com" className="hover:opacity-80">
-              <LinkedInIcon />
-            </Link>
-            <Link href="https://facebook.com" className="hover:opacity-80">
-              <FacebookIcon />
-            </Link>
-            <Link href="https://instagram.com" className="hover:opacity-80">
-              <InstagramIcon />
-            </Link>
-            <Link href="https://skype.com" className="hover:opacity-80">
-              <SkypeIcon />
-            </Link>
-            <Link href="https://twitter.com" className="hover:opacity-80">
-              <TwitterIcon />
-            </Link>
-            <Link href="https://pinterest.com" className="hover:opacity-80">
-              <PinterestIcon />
-            </Link>
+            {socialLinks.map((social) => (
+              <Link 
+                key={social.href}
+                href={social.href} 
+                className="hover:opacity-80"
+                aria-label={social.label}
+              >
+                {social.icon}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
