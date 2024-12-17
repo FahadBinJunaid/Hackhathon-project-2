@@ -20,17 +20,19 @@ const DeliveryIcon = () => (
 
 export default function Header() {
   return (
-    <div className="bg-[#2A254B] w-full">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-auto sm:h-[48px] py-2 flex flex-col sm:flex-row items-center justify-between text-white text-sm">
-          {/* Centered Message */}
-          <div className="text-center flex-grow sm:flex sm:justify-center sm:items-center">
-            <span className="flex items-center gap-2 text-xs sm:text-sm px-2 text-center">
-              <DeliveryIcon />
-              <span className="hidden sm:inline">Free delivery on all orders over £50 with code easter checkout</span>
-              <span className="sm:hidden">Free delivery over £50</span>
-            </span>
-          </div>
+    <div className="bg-[#2A254B] w-[1440px] mx-auto">
+      <div className="h-[48px] px-4 py-2 flex flex-col sm:flex-row items-center justify-between text-white text-sm">
+        {/* Centered Message */}
+        <div className="text-center flex-grow sm:flex sm:justify-center sm:items-center mt-2 sm:mt-0">
+          <span className="whitespace-normal sm:whitespace-nowrap overflow-visible sm:overflow-hidden text-ellipsis block flex items-center gap-2">
+            <DeliveryIcon />
+            Free delivery on all orders over £50 with code easter checkout
+          </span>
+        </div>
+
+        {/* Language Dropdown */}
+        <div className="flex items-center space-x-2 sm:justify-end w-full sm:w-auto mt-2 sm:mt-0">
+         
         </div>
       </div>
     </div>
