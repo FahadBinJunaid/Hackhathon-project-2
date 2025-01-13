@@ -20,19 +20,21 @@ const DeliveryIcon = () => (
 
 export default function Header() {
   return (
-    <div className="bg-[#2A254B] w-[1440px] mx-auto">
-      <div className="h-[48px] px-4 py-2 flex flex-col sm:flex-row items-center justify-between text-white text-sm">
+    <div className="bg-[#2A254B] w-full">
+      <div className="h-auto min-h-[48px] px-4 py-2 flex flex-col sm:flex-row items-center justify-between text-white text-sm">
         {/* Centered Message */}
         <div className="text-center flex-grow sm:flex sm:justify-center sm:items-center mt-2 sm:mt-0">
           <span className="whitespace-normal sm:whitespace-nowrap overflow-visible sm:overflow-hidden text-ellipsis block flex items-center gap-2">
             <DeliveryIcon />
-            Free delivery on all orders over £50 with code easter checkout
+            <span className="text-xs sm:text-sm">
+              Free delivery on all orders over £50 with code easter checkout
+            </span>
           </span>
         </div>
 
-        {/* Language Dropdown */}
+        {/* Language Dropdown - Adjusted for mobile */}
         <div className="flex items-center space-x-2 sm:justify-end w-full sm:w-auto mt-2 sm:mt-0">
-         
+          {/* Your existing dropdown content */}
         </div>
       </div>
     </div>

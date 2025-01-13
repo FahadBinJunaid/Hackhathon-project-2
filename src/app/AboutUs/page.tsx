@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import EmailSignUp from '../components/EmailSignUp';
@@ -9,7 +8,6 @@ import Image from 'next/image';
 export default function AboutUs() {
   return (
     <div>
-      <Header />
       <Navbar />
       
       {/* Brand Banner - Made responsive */}
@@ -43,7 +41,7 @@ export default function AboutUs() {
           {/* Right Image */}
           <div className="relative aspect-[4/3] lg:aspect-[4/3]">
             <Image
-              src="Image Block.png"
+              src="/Image Block.png"
               alt="Modern yellow chair"
               fill
               className="object-cover"
@@ -58,7 +56,7 @@ export default function AboutUs() {
           {/* Left Image */}
           <div className="relative aspect-[6/5]">
             <Image
-              src="Image (1).png"
+              src="/Image (1).png"
               alt="Modern sofa"
               fill
               className="object-cover"

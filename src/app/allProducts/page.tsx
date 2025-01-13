@@ -16,74 +16,74 @@ const products: Product[] = [
     id: 1,
     name: "The Dandy chair",
     price: 250,
-    image: "Parent.png "
+    image: "/Parent.png"
   },
   {
     id: 2,
     name: "Rustic Vase Set",
     price: 155,
-    image: "vaseM.png"
+    image: "/vaseM.png"
   },
   {
     id: 3,
     name: "The Silky Vase",
     price: 125,
-    image: "sVase.png"
+    image: "/sVase.png"
   },
   {
     id: 4,
     name: "The Lucy Lamp",
     price: 399,
-    image: "Lamp1.png"
+    image: "/Lamp1.png"
   },
   // Duplicate products for multiple rows
   {
     id: 5,
     name: "The Dandy chair",
     price: 250,
-    image: "Lamp2.png"
+    image: "/Lamp2.png"
   },
   {
     id: 6,
     name: "Rustic Vase Set",
     price: 155,
-    image: "Parent2.png"
+    image: "/Parent2.png"
   },
   {
     id: 7,
     name: "The Silky Vase",
     price: 125,
-    image: "Parent3.png"
+    image: "/Parent3.png"
   },
   {
     id: 8,
     name: "The Lucy Lamp",
     price: 399,
-    image: "mChair.png"
+    image: "/mChair.png"
   },
     {
       id: 9,
       name: "The Dandy chair",
       price: 250,
-      image: "Parent.png "
+      image: "/Parent.png "
     },
     {
       id: 10,
       name: "Rustic Vase Set",
       price: 155,
-      image: "vaseM.png"
+      image: "/vaseM.png"
     },
     {
       id: 11,
       name: "The Silky Vase",
       price: 125,
-      image: "sVase.png"
+      image: "/sVase.png"
     },
     {
       id: 12,
       name: "The Lucy Lamp",
       price: 399,
-      image: "Lamp1.png"
+      image: "/Lamp1.png"
     },
   
 ];
@@ -96,9 +96,9 @@ const ProductsPage = () => {
       
       <div className="w-full">
         {/* Banner Image */}
-        <div className="relative w-full aspect-[16/3] sm:aspect-[16/4] md:aspect-[16/5]">
+        <div className="relative w-full aspect-[16/3] sm:aspect-[16/4] md:aspect-[16/2]">
           <Image 
-            src="Frame2.png" 
+            src="/Frame2.png" 
             alt="allProducts" 
             fill
             className="object-cover"
